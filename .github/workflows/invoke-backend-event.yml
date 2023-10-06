@@ -1,0 +1,10 @@
+name: Dispatch
+on:
+  push:
+    branches: [ master ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          curl -X POST -H "Authorization: token ${{ secrets.token_for_genesis }}" -H "Accept: application/vnd.github.everest-preview+json" -d '{"event_type": "update-submodule"}' -i  https://api.github.com/repos/genesis-tech-tribe/api-doc-duplicate-test-target/dispatches
