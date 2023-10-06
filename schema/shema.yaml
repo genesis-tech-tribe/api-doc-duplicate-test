@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   version: 1.0.1
   title: Simple API
-  description: A simple API to illustrate OpenAPI concepts
+  description: A simple API to illustrate OpenAPI concepts. revosed
 
 servers:
   - url: https://example.io/v1
