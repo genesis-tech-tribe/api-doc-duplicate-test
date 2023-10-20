@@ -16,7 +16,8 @@ jobs:
         with:
           app_id: ${{ secrets.APP_ID }}
           private_key: ${{ secrets.APP_SECRET }}
-          repositories: "api-doc-duplicate-test-target,api-doc-duplicate-test"
+          owner: ${{ github.repository_owner }}
+          # repositories: "api-doc-duplicate-test-target,api-doc-duplicate-test"
 
       - run: |
-          curl -X POST -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -H "Accept: application/vnd.github.everest-preview+json" -d '{"event_type": "update-submodule"}' -i  https://api.github.com/repos/genesis-tech-tribe/api-doc-duplicate-test-target/dispatches
+          curl -X POST -H "Authorization: token ${{ steps.generate_token.outputs.token }}" -H "Accept: application/vnd.github.everest-preview+json" -d '{"event_type": "update-submodule"}' -i  https://api.github.com/repos/genesis-tech-tribe/api-doc-duplicate-test-target/dispatches
