@@ -32,6 +32,7 @@ jobs:
           cache-dependency-path: ./project-document/package-lock.json
 
       - name: check working dir files
+        working-directory: ./project-document
         run: ls
       - name: Install dependencies
         run: npm ci
