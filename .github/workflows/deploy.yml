@@ -29,12 +29,13 @@ jobs:
         with:
           node-version: 18
           cache: npm
+          cache-dependency-path: ./project-document/package-lock.json
 
+      - name: check working dir files
+        run: ls
       - name: Install dependencies
-        working-directory: ./project-document
         run: npm ci
       - name: Build website
-        working-directory: ./project-document
         run: npm build
 
       # Popular action to deploy to GitHub Pages:
