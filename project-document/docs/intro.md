@@ -2,4 +2,4 @@
 slug: /
 ---
 
-# Welcome to Nishiki Project Document Test Repo
+# Welcome to Nishiki Project Document Test Repository
